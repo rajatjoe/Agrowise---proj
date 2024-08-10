@@ -8,6 +8,7 @@ const Navbar = ({ show }) => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/feature'>Tracking Farm</Link></li>
         <li><Link to='/suggestion'>Suggestion</Link></li>
+        <li><Link to='/scheme'>Schemes</Link></li>
       </ul>
     </div>
   );
