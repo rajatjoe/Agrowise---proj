@@ -8,13 +8,20 @@ import WhyChooseAgroWise from '../components/WhyChooseAgroWise';
 const Home = () => {
   return (
     <div className="mainContainer" >
-      <AgroWiseHeader/>
+      <div className='home-intro'>
+        <AgroWiseHeader />
+      </div>
       <div className="contentWrapper">
         <HowItWorks />
       </div>
-      <WhyChooseAgroWise />
+
+      <div>
+        <WhyChooseAgroWise />
+      </div>
+      <div>
         <CallToAction />
-    </div> 
+      </div>
+    </div>
   );
 };
 
