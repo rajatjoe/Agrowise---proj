@@ -272,10 +272,8 @@ header svg{
   justify-content:row;
   color: #000000;
   margin-bottom: -10%;
-  width: 100vw;
-  height: 100vh;
 }
-.x .argoh-inner h1{
+.argoh .argoh-inner h1{
   font-size: 60px;
   margin-top: 5rem;
 }
