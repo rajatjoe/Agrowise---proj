@@ -103,7 +103,7 @@ header svg{
 }
 
 .container-page{
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #4CAF50;
   
 }
@@ -139,14 +139,14 @@ header svg{
 /* Home css data */
 
 .mainContainer {
-  /* background-color: #fff;
+  background-color: #fff;
   margin-top: auto;
   margin-bottom: auto;
   color: #000;
   padding: 0px 72px 200px 72px;
   padding-left:72px;
-  padding-right:72px; */
-  height: auto;
+  padding-right:72px;
+  height: 100vh;
   width: 100vw;
   padding-top: 60px;
   background-color: #fff;
@@ -177,12 +177,6 @@ header svg{
   margin-bottom: 20px;
 }
 
-.argoh-desc {
-  font-size: 24px;
-  font-weight: 400;
-  padding: 0 50px;
-}
-
 .scaled-image-transform {
   transform: scale(0.5); /* Scale down to 50% of the original size */
   transform-origin: top left; /* Adjust origin if needed */
@@ -194,6 +188,7 @@ header svg{
   width: 80%;
   height: 60%;
   margin-bottom: 0;
+  margin-top: auto;
 }
 
 
@@ -278,26 +273,16 @@ header svg{
   color: #000000;
   margin-bottom: -10%;
 }
-
-.argoh-left{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 50vw;
-  flex-direction: column;
-
+.argoh .argoh-inner h1{
+  font-size: 60px;
+  margin-top: 5rem;
 }
 
-.argoh-right{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 50vw;
-  
+.argoh .argoh-inner{
+  /* color: red; */
+  font-size: 25px;
+  /* margin-top: 5rem; */
 }
-
 .split{
   height: 100vh;
   /* width: 100vw; */
@@ -367,4 +352,77 @@ header svg{
   font-size: larger;
   font-weight: bold;
   color: #001627;
+}
+
+
+/* ImageUploder */
+
+.upload__image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  height: 60vh;
+  width: 60vw;
+  padding: 20px;
+  border: 2px dashed #d3d3d3;
+  border-radius: 10px;
+}
+
+.upload-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-item img {
+  width: 30%;
+  border-radius: 10px;
+}
+
+.image-item__btn-wrapper {
+  width: min-content;
+  height: auto;
+  background-color: #dc3545;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.image-item__btn-wrapper:hover {
+  background-color: #c82333;
+}
+.btn-submit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+.btn-submit button{
+  font-size: medium;
+  background-color: #2DE7D7;
 }
