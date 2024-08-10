@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Features from './pages/Features';
 import Suggestion from './pages/Suggestion';
 import Diseasse from './pages/Diseasse';
+import Schemes from './pages/Schemes';
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -35,6 +36,7 @@ function App() {
             <Route path='/feature' element={<Features />} />
             <Route path='/suggestion' element={<Suggestion />} />
             <Route path='/Diseasse' element={<Diseasse />} />
+            <Route path='/scheme' element={<Schemes />} />
           </Routes>
         </main>
       </Router>
