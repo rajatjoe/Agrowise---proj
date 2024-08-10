@@ -120,9 +120,6 @@ header svg{
 .popup form label {
   margin-bottom: 5px;
 }
-
-<<<<<<< HEAD
-
 /* Home css data */
 
 .mainContainer {
@@ -269,7 +266,7 @@ header svg{
 .split{
   height: 100vh;
   /* width: 100vw; */
-=======
+}
 .popup form input,
 .popup form select {
   padding: 8px;
@@ -335,5 +332,4 @@ header svg{
   font-size: larger;
   font-weight: bold;
   color: #001627;
->>>>>>> 810749a97abb6a20975ae2fbf34e0e0cd52ae30c
 }
