@@ -590,17 +590,10 @@ header svg{
   color: black;
 }
 
-<<<<<<< HEAD
-/* .scheme-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-} */
-=======
 .scheme-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
 
 .imgsch-holder {
   width: 100%;
