@@ -1,0 +1,20 @@
+import React from 'react';
+import styles from './AgroWise.module.css';
+
+const AgroWiseHeader = () => {
+  return (
+    <header className={styles.header}>
+      <div className={styles.headerContent}>
+        <h1 className={styles.title}>Welcome to AgroWise</h1>
+        <p className={styles.description}>
+          "At AgroWise, we combine the power of technology and agriculture to help farmers make smarter decisions. Our crop recommendation system analyzes your local soil conditions, climate data, and seasonal patterns to provide personalized crop suggestions that optimize for yield, sustainability, and profitability."
+        </p>
+      </div>
+      <div className={styles.imageWrapper}>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd1d3e63b882d76476e02ce87ddac55950e4d1246476dfbe5294c45115bd5954?placeholderIfAbsent=true&apiKey=1375a8a048d04ebba4c0ffc74eff8181" className={styles.headerImage} alt="AgroWise farming technology illustration" />
+      </div>
+    </header>
+  );
+};
+
+export default AgroWiseHeader;

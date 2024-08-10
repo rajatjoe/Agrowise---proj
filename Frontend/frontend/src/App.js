@@ -17,15 +17,15 @@ function App() {
         <header>
           <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
         </header>
-        <Navbar show={showNav} />
 
-        <div className='main'>
+        <main className='main'>
+        <Navbar show={showNav} />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/feature' element={<Features />} />
             <Route path='/suggestion' element={<Suggestion />} />
           </Routes>
-        </div>
+        </main>
       </Router>
     </>
   );

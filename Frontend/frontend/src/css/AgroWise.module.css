@@ -1,0 +1,204 @@
+.mainContainer {
+    background-color: #fff;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    padding-left:72px;
+    padding-right:72px;
+    padding-top: 2rem;
+    padding-bottom: 100px;
+  }
+  
+  .outermain {
+    align-self: center;
+    width: 100%;
+    max-width: 1188px;
+    display: flex;
+    gap: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .outermain {
+      max-width: 100% ;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    font-family: Inter, sans-serif;
+    color: #000;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size:1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 125px;
+  }
+  
+  @media (max-width: 991px) {
+    .container {
+      max-width: 100%;
+      margin-top: 18px;
+    }
+  
+    .description {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .imageWrapper {
+    width: 33%;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .imageWrapper {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
+  .headerImage {
+    aspect-ratio: 0.94;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .headerImage {
+      margin-top: 18px;
+    }
+  }
+  
+  .contentWrapper {
+    background-color: #dbdbdb;
+    align-self: stretch;
+    display: flex;
+    margin-top: 83px;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inter, sans-serif;
+    color: #000;
+    padding: 33px 80px 146px;
+  }
+  
+  @media (max-width: 991px) {
+    .contentWrapper {
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 0 20px 100px;
+    }
+  }
+  
+  .howItWorks {
+    display: flex;
+    margin-bottom: -29px;
+    width: 973px;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 991px) {
+    .howItWorks {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .sectionTitle {
+    font-size: 32px;
+    font-weight: 700;
+    align-self: center;
+  }
+  
+  .stepsList {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 67px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .stepsList {
+      margin-top: 40px;
+    }
+  }
+  
+  .step {
+    margin-bottom: 20px;
+  }
+  
+  .whyChoose {
+    margin-top: 103px;
+  }
+  
+  @media (max-width: 991px) {
+    .whyChoose {
+      margin-top: 40px;
+    }
+  }
+  
+  .reasonText {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 45px;
+  }
+  
+  @media (max-width: 991px) {
+    .reasonText {
+      margin-top: 40px;
+    }
+  }
+  
+  .callToAction {
+    margin-top: 67px;
+  }
+  
+  @media (max-width: 991px) {
+    .callToAction {
+      margin-top: 40px;
+    }
+  }
+  
+  .ctaText {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 55px;
+  }
+  
+  @media (max-width: 991px) {
+    .ctaText {
+      margin-top: 40px;
+    }
+  }
+  
+  .ctaButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .argoh{
+    margin: 10vh;
+  }
