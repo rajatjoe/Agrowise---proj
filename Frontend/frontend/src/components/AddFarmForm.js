@@ -1,90 +1,183 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
+const Popup = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  color: #eee;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  border-radius: 12px;
+  width: 600px;
+  border: 2px solid white; /* White border */
+  display:flex;
+  justify-content: center;
+  align-items: center; /* Center align content */ 
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align form inputs */
+  width: 400px;
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 20px;
+  width: 400px; /* Ensure full width */
+`;
+
+const Label = styled.label`
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+`;
+
+const Input = styled.input`
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  width: 400px;
+  background: #333;
+  color: #eee;
+`;
+
+const Select = styled.select`
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  width: 400px;
+  background: #333;
+  color: #eee;
+`;
+
+const Button = styled.button`
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type="button"] {
+    background-color: #555;
+    color: #eee;
+  }
+
+  &[type="button"]:hover {
+    background-color: #666;
+    transform: scale(1.05);
+  }
+`;
 
 const AddFarmForm = ({ onClose }) => {
   const [location, setLocation] = useState(null);
-  const [startDate, setStartDate] = useState('');
-  const [additionalDetails, setAdditionalDetails] = useState('');
+  const [farmName, setFarmName] = useState('');
+  const [cropType, setCropType] = useState('');
+  const [growthStage, setGrowthStage] = useState('');
+  const [plantingDate, setPlantingDate] = useState('');
 
-  const handleGetLocation = () => {
+  useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          });
-        },
-        error => {
-          console.error('Error obtaining location', error);
-        }
-      );
-    } else {
-      console.error('Geolocation is not supported by this browser.');
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (location) {
-      // Fetch weather data based on location
-      const weatherResponse = await fetch(`https://api.weatherapi.com/v1/current.json?key=YOUR_WEATHER_API_KEY&q=${location.latitude},${location.longitude}`);
-      const weatherData = await weatherResponse.json();
-      console.log('Weather Data:', weatherData);
-
-      // Use Gemini API to suggest crops
-      const geminiResponse = await fetch('https://gemini-api.com/suggest-crops', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer YOUR_GEMINI_API_KEY`
-        },
-        body: JSON.stringify({
-          location: location,
-          weather: weatherData,
-          startDate: startDate,
-          additionalDetails: additionalDetails
-        })
+      navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        setLocation({ latitude, longitude });
       });
-
-      const cropSuggestions = await geminiResponse.json();
-      console.log('Crop Suggestions:', cropSuggestions);
+    } else {
+      alert("Geolocation is not supported by this browser.");
     }
+  }, []);
 
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const farmData = {
+      location,
+      farmName,
+      cropType,
+      growthStage,
+      plantingDate,
+    };
+
+    // Here, you can integrate the Gemini API to track the crop stage.
+    // Example: await trackCropStageWithGeminiAPI(farmData);
+
+    console.log(farmData);
     onClose();
   };
 
   return (
-    <div className="add-farm-form">
-      <h2>Add Farm</h2>
-      <button onClick={handleGetLocation}>Get Location</button>
-      {location && (
-        <p>
-          Location: Latitude {location.latitude}, Longitude {location.longitude}
-        </p>
-      )}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Start Date:
-          <input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
+    <Popup>
+      <Form onSubmit={submitHandler}>
+        <h2 style={{ textAlign: 'center' }}>Add Farm</h2> {/* Center align heading */}
+        <FormGroup>
+          <Label>Farm Name:</Label>
+          <Input
+            type="text"
+            value={farmName}
+            onChange={(e) => setFarmName(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Additional Details:
-          <textarea
-            value={additionalDetails}
-            onChange={(e) => setAdditionalDetails(e.target.value)}
+        </FormGroup>
+        <FormGroup>
+          <Label>Crop Type:</Label>
+          <Input
+            type="text"
+            value={cropType}
+            onChange={(e) => setCropType(e.target.value)}
             required
-          ></textarea>
-        </label>
-        <button type="submit">Submit</button>
-        <button type="button" onClick={onClose}>Cancel</button>
-      </form>
-    </div>
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label>Growth Stage:</Label>
+          <Select
+            value={growthStage}
+            onChange={(e) => setGrowthStage(e.target.value)}
+            required
+          >
+            <option value="">Select Stage</option>
+            <option value="seed">Seed</option>
+            <option value="plantation">Plantation</option>
+            <option value="growing">Growing</option>
+            <option value="harvesting">Harvesting</option>
+          </Select>
+        </FormGroup>
+        <FormGroup>
+          <Label>Planting Date:</Label>
+          <Input
+            type="date"
+            value={plantingDate}
+            onChange={(e) => setPlantingDate(e.target.value)}
+            required
+          />
+        </FormGroup>
+        <div>
+        <Button type="submit">Add Farm</Button>
+        <Button type="button" onClick={onClose}>Cancel</Button>
+        </div>
+      </Form>
+    </Popup>
   );
 };
 
