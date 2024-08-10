@@ -134,11 +134,8 @@ header svg{
   margin-bottom: 5px;
 }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
 /* Home css data */
 
 .mainContainer {
@@ -278,7 +275,7 @@ header svg{
   width: 100vw;
   height: 100vh;
 }
-.argoh .argoh-inner h1{
+.x .argoh-inner h1{
   font-size: 60px;
   margin-top: 5rem;
 }
@@ -288,15 +285,10 @@ header svg{
   font-size: 25px;
   /* margin-top: 5rem; */
 }
-<<<<<<< HEAD
-
-
-=======
 .split{
   height: 100vh;
   /* width: 100vw; */
 }
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
 .popup form input,
 .popup form select {
   padding: 8px;
@@ -364,8 +356,6 @@ header svg{
   color: #001627;
 }
 
-<<<<<<< HEAD
-=======
 
 /* ImageUploder */
 
@@ -439,60 +429,36 @@ header svg{
   background-color: #2DE7D7;
 }
 
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
 /* SUGGESTIONS */
 .sug-container{
   width:100vw;
   height:100vh;
   padding-top: 20vh;
-<<<<<<< HEAD
-  background-image: url("E:\Habibi\Frontend\frontend\src\images\bgimage.jpg");
-  background-size: cover; /* Adjust size as needed */
-  background-position: center center; /* Adjust position as needed */
-  background-attachment: fixed; /* Keeps the background image fixed */
-  background-repeat: no-repeat; /* Prevents repeating the background image */
-=======
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  background-color: blue;
-<<<<<<< HEAD
-  position: relative;
-  z-index: 2;
-=======
-
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
+  background-image: url('E:\Habibi\Frontend\frontend\src\assets\bgimage.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
 }
 
 .sug-left{
   height: 70vh;
   width: 40vw;
-<<<<<<< HEAD
-  
-  border-radius: 25px;
-  border: 5px solid  rgb(16, 19, 206);
-  /* backdrop-filter: blur(20px); */
-=======
-  background-color:#1da2a9;
+  /* background-color:#1da2a9; */
   border-radius: 25px;
   border: 1px solid black;
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
 }
 
 .sug-right{
   height: 70vh;
   width: 40vw;
-<<<<<<< HEAD
-  
-  border-radius: 25px;
-  border: 5px solid rgb(16, 19, 206);
-=======
-  background-color:#1da2a9;
+  /* background-color:#1da2a9; */
   border-radius: 25px;
   border: 1px solid black;
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
 }
 
 .sug-left-heading{
@@ -510,33 +476,16 @@ header svg{
 }
 
 .navBtn{
-<<<<<<< HEAD
-
-  cursor: pointer;
-  font-size: 14px;
-  background-color: black;
-
-=======
   display: inline-block;
   outline: none;
   cursor: pointer;
   font-size: 14px;
   line-height: 1;
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
   border-radius: 500px;
   transition-property: background-color,border-color,color,box-shadow,filter;
   transition-duration: .3s;
   border: 1px solid transparent;
   letter-spacing: 2px;
-<<<<<<< HEAD
-  font-weight: 700;
-  text-align: center;
-  padding: 16px 14px 18px;
-  box-shadow: inset 0 0 0 2px #3284d6;
-  background-color: transparent;
-  bottom: 120px;
-  position: absolute;
-=======
   min-width: 160px;
   text-transform: uppercase;
   white-space: normal;
@@ -548,7 +497,6 @@ header svg{
   background-color: transparent;
   position: fixed;
   bottom: 40px;
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03
   left: 20vw;
 }
 
@@ -565,7 +513,7 @@ header svg{
 
 .scheme-cont{
   padding-top: 380vh;
-  width: 80vw;
+  width: 100vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -574,6 +522,7 @@ header svg{
   background-color: #f1f1f1;
   flex-direction: column;
   background-color:#4CAF50;
+  padding-bottom: 40px;
 }
 
 .scheme-card{
@@ -622,10 +571,4 @@ header svg{
   font-size: large;
 }
 
-<<<<<<< HEAD
 /*  */
-
-
-=======
-/*  */
->>>>>>> 25391c22eefe54048c640bba353272bb6a555c03

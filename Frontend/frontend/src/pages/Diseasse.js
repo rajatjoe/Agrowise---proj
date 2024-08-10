@@ -1,9 +1,9 @@
 import React from 'react'
-import ImageUploader from '../components/ImageUploader'
+// import ImageUploader from '../components/ImageUploader'
 function Diseasse() {
   return (
     <div className='diseasse'>
-        <ImageUploader/>
+        {/* <ImageUploader/> */}
     </div>
   )
 }

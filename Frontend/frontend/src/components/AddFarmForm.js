@@ -8,65 +8,65 @@ const Popup = styled.div`
   transform: translate(-50%, -50%);
   background: #222;
   color: #eee;
-  padding: 20px;
+  ${'' /* padding: 20px; */}
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   border-radius: 12px;
-  width: 600px;
-  border: 2px solid white; /* White border */
+  width: 90vw; /* Adjust width to be responsive */
+  max-width: 600px; /* Set a maximum width */
+  border: 2px solid white;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center align content */
+  align-items: center;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align form inputs */
-  width: 400px;
+  align-items: stretch; /* Stretch inputs to fill available width */
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
-  width: 400px; /* Ensure full width */
+  ${'' /* margin-bottom: 16px; */}
 `;
 
 const Label = styled.label`
-  margin-bottom: 8px;
+  ${'' /* margin-bottom: 8px; */}
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px; /* Slightly smaller font size */
 `;
 
 const Input = styled.input`
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px; /* Slightly smaller font size */
   border: 1px solid #555;
   border-radius: 8px;
-  width: 400px;
+  width: 100%; /* Full width of the parent */
   background: #333;
   color: #eee;
 `;
 
 const Select = styled.select`
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px; /* Slightly smaller font size */
   border: 1px solid #555;
   border-radius: 8px;
-  width: 400px;
+  width: 100%; /* Full width of the parent */
   background: #333;
   color: #eee;
 `;
 
 const Button = styled.button`
-  padding: 12px 20px;
+  padding: 10px 16px;
   border-radius: 8px;
   border: none;
   background-color: #4CAF50;
   color: white;
-  font-size: 16px;
+  font-size: 14px; /* Slightly smaller font size */
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s, transform 0.2s;
+  margin-bottom:10px;
 
   &:not(:last-child) {
     margin-right: 10px;
@@ -127,7 +127,7 @@ const AddFarmForm = ({ onClose }) => {
     };
   
     try {
-      const response = await fetch('/api/v1/post', { // Adjust the URL based on your backend setup
+      const response = await fetch('/api/v1/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -140,8 +140,8 @@ const AddFarmForm = ({ onClose }) => {
       }
   
       const result = await response.json();
-      console.log(result); // Handle success response if needed
-      onClose(); // Close the form or perform any other action
+      console.log(result);
+      onClose();
     } catch (error) {
       console.error('Error:', error);
     }
@@ -150,7 +150,7 @@ const AddFarmForm = ({ onClose }) => {
   return (
     <Popup>
       <Form onSubmit={submitHandler}>
-        <h2 style={{ textAlign: 'center' }}>Add Farm</h2> {/* Center align heading */}
+        <h2 style={{ textAlign: 'center' }}>Add Farm</h2>
         <FormGroup>
           <Label>Farm Name:</Label>
           <Input
