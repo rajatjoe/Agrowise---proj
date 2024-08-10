@@ -12,10 +12,12 @@ function App() {
   const [showNav, setShowNav] = useState(true);
 
   return (
-    <>
+    <div className='container-page'>
       <Router>
         <header>
-          <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
+          <div>
+            <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
+          </div>
         </header>
 
         <main className='main'>
@@ -27,7 +29,7 @@ function App() {
           </Routes>
         </main>
       </Router>
-    </>
+    </div>
   );
 }
 

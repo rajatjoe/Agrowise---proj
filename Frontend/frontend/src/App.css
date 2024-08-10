@@ -89,39 +89,39 @@ header svg{
   color: #c9c9c9;
 }
 
-.add-farm-form {
+.container-page{
+  overflow: hidden;
+  background-color: #4CAF50;
+  
+}
+
+/* form css */
+/* Add to your CSS file */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-.add-farm-form h2 {
-  margin-top: 0;
-}
-
-.add-farm-form button {
-  margin-right: 10px;
-}
-
-.add-farm-form form {
+.popup form {
   display: flex;
   flex-direction: column;
 }
 
-.add-farm-form form label {
+.popup form div {
   margin-bottom: 10px;
 }
 
-.add-farm-form form input,
-.add-farm-form form textarea {
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.popup form label {
+  margin-bottom: 5px;
 }
 
+<<<<<<< HEAD
 
 /* Home css data */
 
@@ -269,4 +269,71 @@ header svg{
 .split{
   height: 100vh;
   /* width: 100vw; */
+=======
+.popup form input,
+.popup form select {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.popup form button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.popup form button[type="button"] {
+  background: #ccc;
+  border: none;
+  margin-left: 10px;
+}
+
+
+/* FEATURES SECTION */
+.feature-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+  margin-top: 10vh;
+  
+  padding-left: 20vw;
+  padding-top: 10vh;
+}
+
+
+
+.farmBtn{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 25px;
+  height: 40px;
+  width: 100px;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:hover {
+    background-color: white;
+    color: #4CAF50;
+    border-color: #4CAF50;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.farm-det{
+  font-size: larger;
+  font-weight: bold;
+  color: #001627;
+>>>>>>> 810749a97abb6a20975ae2fbf34e0e0cd52ae30c
 }
