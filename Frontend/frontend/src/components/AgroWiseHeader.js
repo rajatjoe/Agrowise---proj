@@ -10,7 +10,7 @@ const AgroWiseHeader = () => {
         </p>
       </div>
       <div>
-        <img src={image} loading='lazy' alt="image" className='image' />
+        <img src={image} loading='lazy' alt="imagxZe" className='image' />
       </div>
     </div>
   );
