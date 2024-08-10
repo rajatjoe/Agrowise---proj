@@ -16,7 +16,7 @@ const ImageUploader = () => {
 
   return (
     <>
-    <div >
+    <div className='imageuploder'>
       <ImageUploading
         value={images}
         onChange={onChange}
