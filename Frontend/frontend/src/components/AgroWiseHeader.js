@@ -6,7 +6,7 @@ const AgroWiseHeader = () => {
     <div className="argoh">
       <div className='argoh-left'>
         <h1>Welcome to AgroWise</h1>
-        <p className="argoh-desc">
+        <p className="description">
           "At AgroWise, we combine the power of technology and agriculture to help farmers make smarter decisions. Our crop recommendation system analyzes your local soil conditions, climate data, and seasonal patterns to provide personalized crop suggestions that optimize for yield, sustainability, and profitability."
         </p>
       </div>

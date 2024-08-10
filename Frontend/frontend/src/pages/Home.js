@@ -8,12 +8,12 @@ const Home = () => {
   return (
     <div className='mainContainer'>
       <div className="split">
-        <AgroWiseHeader /> {/* Ensure this is correctly placed */}
-        <div className="contentWrapper">
-          <HowItWorks />
-        </div>
-        <WhyChooseAgroWise />
-        <CallToAction />
+      <AgroWiseHeader /> {/* Ensure this is correctly placed */}
+      <div className="contentWrapper">
+        <HowItWorks />
+      </div>
+      <WhyChooseAgroWise />
+      <CallToAction />
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Features from './pages/Features';
 import Suggestion from './pages/Suggestion';
+import Schemes from './pages/Schemes';
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -33,6 +34,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/feature' element={<Features />} />
             <Route path='/suggestion' element={<Suggestion />} />
+            <Route path='/scheme' element={<Schemes />} />
+
           </Routes>
         </main>
       </Router>
