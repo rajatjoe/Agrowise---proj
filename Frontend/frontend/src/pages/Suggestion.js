@@ -8,7 +8,7 @@ const Suggestion = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
-  
+
         try {
           // Replace with the actual Gemini API endpoint and necessary headers
           const response = await axios.get('https://api.gemini.com/endpoint', {
@@ -19,9 +19,9 @@ const Suggestion = () => {
             headers: {
               'Authorization': 'Bearer YOUR_ACCESS_TOKEN', // Replace with your actual access token
               'Content-Type': 'application/json'
-            } 
+            }
           });
-  
+
           const data = response.data;
           console.log('Crop cultivation data:', data);
           // Process the data as required and update your UI
@@ -35,18 +35,18 @@ const Suggestion = () => {
       console.error('Geolocation is not supported by this browser.');
     }
   };
-  
 
-  
+
+
   return (
     <div className='sug-container'>
-    {/* sug-left */}
+      {/* sug-left */}
       <div className='sug-left'>
         <div className='sug-left-heading'>
-        FARM ANALYSER
+          FARM ANALYSER
         </div>
         <div className='sug-desc'>
-          Analyze your farm's soil, water, and pesticides for optimal management strategies.
+          Our service begins by gathering information about the user's location using geolocation data. This data is then analyzed to determine the suitability of farming at the specified location. We consider various factors such as soil quality, weather conditions throughout the year, and other environmental factors. Based on this analysis, we provide tailored recommendations to the farmer, which include details about the soil, weather patterns, and the most suitable crops to grow in that area.
         </div>
 
         <div className='navBtn' onClick={suggBtnHandler}>
@@ -56,6 +56,10 @@ const Suggestion = () => {
 
       {/* sug-right */}
       <div className='sug-right'>
+
+      <div className='sug-right-heading'>
+          FARM ANALYSIS
+        </div>
 
 
       </div>

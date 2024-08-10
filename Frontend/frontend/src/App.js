@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import './index.css';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
 import Features from './pages/Features';
 import Suggestion from './pages/Suggestion';
@@ -21,10 +21,10 @@ function App() {
             <GiHamburgerMenu height={100} width={100} color='white' onClick={() => setShowNav(!showNav)} />
           
           <div className='nav2'>
-            <div>HOME</div>
-            <div>FARMS</div>
-            <div>SUGGESTION</div>
-            <div>HABIBI</div>
+            <Link to='/' className='navitem'>HOME</Link>
+            <Link to='/feature' className='navitem'>FARMS</Link>
+            <Link to='/suggestion' className='navitem'>SUGGESTION</Link>
+            <Link to='/scheme' className='navitem'>SCHEMES</Link>
 
           </div>
         </header>

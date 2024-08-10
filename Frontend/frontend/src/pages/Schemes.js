@@ -51,6 +51,10 @@ const Schemes = () => {
   return (
     <div className='scheme-cont'>
 
+    <div className='scheme-heading'>
+      SCHEMES BY GOVERNMENT OF INDIA
+    </div>
+
 
 
 
