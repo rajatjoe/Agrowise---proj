@@ -6,6 +6,7 @@ import WhyChooseAgroWise from "../components/WhyChooseAgroWise";
 
 const Home = () => {
   return (
+<<<<<<< HEAD
     <div className='mainContainer'>
       <div className="split">
       <AgroWiseHeader /> {/* Ensure this is correctly placed */}
@@ -15,6 +16,10 @@ const Home = () => {
       <WhyChooseAgroWise />
       <CallToAction />
       </div>
+=======
+    <div>
+        HOME
+>>>>>>> 810749a97abb6a20975ae2fbf34e0e0cd52ae30c
     </div>
   );
 };

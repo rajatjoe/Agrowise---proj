@@ -103,7 +103,7 @@ header svg{
 }
 
 .container-page{
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: #4CAF50;
   
 }
