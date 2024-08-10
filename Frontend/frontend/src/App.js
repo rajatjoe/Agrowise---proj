@@ -9,6 +9,7 @@ import Features from './pages/Features';
 import Suggestion from './pages/Suggestion';
 import Diseasse from './pages/Diseasse';
 import Schemes from './pages/Schemes';
+import navlogo from './images/Agrowise2_noBG.png'
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -17,20 +18,23 @@ function App() {
     <div className='container-page'>
       <Router>
         <header>
+
+          <GiHamburgerMenu height={100} width={100} color='white' onClick={() => setShowNav(!showNav)} />
           
-            <GiHamburgerMenu height={100} width={100} color='white' onClick={() => setShowNav(!showNav)} />
-          
+
           <div className='nav2'>
+
             <Link to='/' className='navitem'>HOME</Link>
             <Link to='/feature' className='navitem'>FARMS</Link>
             <Link to='/suggestion' className='navitem'>SUGGESTION</Link>
             <Link to='/scheme' className='navitem'>SCHEMES</Link>
 
+
           </div>
         </header>
 
         <main className='main'>
-        <Navbar show={showNav} />
+          <Navbar show={showNav} />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/feature' element={<Features />} />
