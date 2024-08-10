@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Popup = styled.div`
@@ -8,65 +9,78 @@ const Popup = styled.div`
   transform: translate(-50%, -50%);
   background: #222;
   color: #eee;
-  ${'' /* padding: 20px; */}
+  padding: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   border-radius: 12px;
-  width: 90vw; /* Adjust width to be responsive */
-  max-width: 600px; /* Set a maximum width */
-  border: 2px solid white;
+  width: 600px;
+  border: 2px solid white; 
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
+const Spinner = styled.div`
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`;
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* Stretch inputs to fill available width */
+  align-items: center;
+  width: 400px;
 `;
 
 const FormGroup = styled.div`
-  ${'' /* margin-bottom: 16px; */}
+  width: 400px;
 `;
 
 const Label = styled.label`
-  ${'' /* margin-bottom: 8px; */}
+  margin-bottom: 8px;
   font-weight: bold;
-  font-size: 14px; /* Slightly smaller font size */
+  font-size: 16px;
 `;
 
 const Input = styled.input`
-  padding: 10px;
-  font-size: 14px; /* Slightly smaller font size */
+  padding: 12px;
+  font-size: 16px;
   border: 1px solid #555;
   border-radius: 8px;
-  width: 100%; /* Full width of the parent */
+  width: 400px;
   background: #333;
   color: #eee;
 `;
 
 const Select = styled.select`
-  padding: 10px;
-  font-size: 14px; /* Slightly smaller font size */
+  padding: 12px;
+  font-size: 16px;
   border: 1px solid #555;
   border-radius: 8px;
-  width: 100%; /* Full width of the parent */
+  width: 400px;
   background: #333;
   color: #eee;
 `;
 
 const Button = styled.button`
-  padding: 10px 16px;
+  padding: 12px 20px;
   border-radius: 8px;
   border: none;
   background-color: #4CAF50;
   color: white;
-  font-size: 14px; /* Slightly smaller font size */
+  font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
   transition: background-color 0.3s, transform 0.2s;
-  margin-bottom:10px;
 
   &:not(:last-child) {
     margin-right: 10px;
@@ -92,58 +106,121 @@ const Button = styled.button`
   }
 `;
 
+const Error = styled.div`
+  color: red;
+  margin-bottom: 20px;
+`;
+
+const Loader = styled.div`
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 20px;
+`;
+
 const AddFarmForm = ({ onClose }) => {
   const [location, setLocation] = useState(null);
   const [farmName, setFarmName] = useState('');
   const [cropType, setCropType] = useState('');
   const [growthStage, setGrowthStage] = useState('');
   const [plantingDate, setPlantingDate] = useState('');
+  const [soilData, setSoilData] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
+  const [loadingSoil, setLoadingSoil] = useState(false);
+  const [loadingWeather, setLoadingWeather] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         const { latitude, longitude } = position.coords;
         setLocation({ latitude, longitude });
+      }, () => {
+        alert("Failed to get location.");
       });
     } else {
       alert("Geolocation is not supported by this browser.");
     }
   }, []);
 
+  useEffect(() => {
+    if (location) {
+      setLoadingWeather(true);
+      fetchWeatherData();
+    }
+  }, [location]);
+
+  useEffect(() => {
+    if (location) {
+      setLoadingSoil(true);
+      fetchSoilType();
+    }
+  }, [weatherData]);
+
+  const fetchSoilType = async () => {
+    if (!location) return;
+
+    const { latitude, longitude } = location;
+    const url = `https://rest.isric.org/soilgrids/v2.0/properties/query?lon=${longitude}&lat=${latitude}&property=bdod&property=cec&property=cfvo&property=clay&property=nitrogen&property=ocd&property=ocs&property=phh2o&property=sand&property=silt&property=soc&property=wv0010&property=wv0033&property=wv1500&depth=0-5cm&depth=0-30cm&depth=5-15cm&depth=15-30cm&depth=30-60cm&depth=60-100cm&depth=100-200cm&value=Q0.5&value=Q0.05&value=Q0.95&value=mean&value=uncertainty;`
+
+    try {
+      const response = await axios.get(url);
+      setSoilData(response.data);
+    } catch (error) {
+      setError("Failed to retrieve soil data: " + (error.response ? error.response.status : error.message));
+    } finally {
+      setLoadingSoil(false);
+    }
+  };
+
+  const fetchWeatherData = async () => {
+    if (!location) return;
+
+    const { latitude, longitude } = location;
+    const apiKey = '110373276c613ce995737f649444fd55';
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+    try {
+      const response = await axios.get(url);
+      setWeatherData(response.data);
+    } catch (error) {
+      setError("Failed to retrieve weather data: " + (error.response ? error.response.status : error.message));
+    } finally {
+      setLoadingWeather(false);
+    }
+  };
+
   const submitHandler = async (e) => {
     e.preventDefault();
-  
-    if (!location) {
-      alert("Location is not available.");
+
+    if (!weatherData) {
+      alert("Please wait for the soil and weather data to load.");
       return;
     }
-  
-    const farmData = {
+
+    const userData = {
       location,
       farmName,
       cropType,
       growthStage,
       plantingDate,
     };
-  
+    
+    const farmData = {
+      soilData,
+      weatherData
+    }
+
     try {
-      const response = await fetch('/api/v1/post', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(farmData),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Network response was not ok.');
-      }
-  
-      const result = await response.json();
-      console.log(result);
+      await axios.post('http://192.168.113.249:5000/api/addFarm', userData);
+      const response = await axios.post("http://127.0.0.1:5001/get_recommendations",{userData,farmData})
+      const response1 = await axios.post("http://127.0.0.1:5001/get_conditions",{userData,farmData})
+      console.log("Recommendations Response:", response.data);
+      console.log("Conditions Response:", response1.data);
+      alert("Farm added successfully!");
+      
       onClose();
     } catch (error) {
-      console.error('Error:', error);
+      setError("Failed to add farm: " + (error.response ? error.response.status : error.message));
     }
   };
 
@@ -192,6 +269,8 @@ const AddFarmForm = ({ onClose }) => {
             required
           />
         </FormGroup>
+        {error && <Error>{error}</Error>}
+        {(loadingWeather) && <Loader>Loading data...</Loader>}
         <div>
           <Button type="submit">Add Farm</Button>
           <Button type="button" onClick={onClose}>Cancel</Button>

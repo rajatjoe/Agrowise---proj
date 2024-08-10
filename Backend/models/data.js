@@ -1,6 +1,7 @@
+// ./models/data.js
 const mongoose = require('mongoose');
 
-const UserDataSchema = new mongoose.Schema({
+const FarmSchema = new mongoose.Schema({
     farmName: {
         type: String,
         required: true
@@ -11,7 +12,6 @@ const UserDataSchema = new mongoose.Schema({
     },
     growthStage: {
         type: String,
-        unique: true,
         required: true
     },
     latitude: {
@@ -19,23 +19,15 @@ const UserDataSchema = new mongoose.Schema({
         required: true
     },
     longitude: {
-        type: String,
-        required: true
-    },
-    plantationDate: {
         type: Number,
         required: true
     },
-    soildata: {
-        type: String,
+    plantingDate: {
+        type: Date, 
         required: true
     },
-    weatherdata: {
-        type: String,
-        required: true
-    }
 }, {
     collection: "userdata"
 });
 
-mongoose.model("userdata", UserDataSchema);
+module.exports = mongoose.model("Farm", FarmSchema);
