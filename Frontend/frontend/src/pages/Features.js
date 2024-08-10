@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AddFarmForm from '../components/AddFarmForm';
-import styled from 'styled-components';
 
 const Features = () => {
     const [showAddFarmForm, setShowAddFarmForm] = useState(false);

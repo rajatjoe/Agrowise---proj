@@ -1,13 +1,12 @@
 import { useState } from 'react';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import './App.css';
 import Navbar from './components/Navbar';
 import './index.css';
-import { GiHamburgerMenu } from "react-icons/gi";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './pages/Home';
 import Features from './pages/Features';
+import Home from './pages/Home';
 import Suggestion from './pages/Suggestion';
-
 function App() {
   const [showNav, setShowNav] = useState(true);
 
