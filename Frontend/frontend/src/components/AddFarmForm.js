@@ -14,9 +14,9 @@ const Popup = styled.div`
   border-radius: 12px;
   width: 600px;
   border: 2px solid white; /* White border */
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-items: center; /* Center align content */ 
+  align-items: center; /* Center align content */
 `;
 
 const Form = styled.form`
@@ -112,6 +112,12 @@ const AddFarmForm = ({ onClose }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+  
+    if (!location) {
+      alert("Location is not available.");
+      return;
+    }
+  
     const farmData = {
       location,
       farmName,
@@ -119,12 +125,26 @@ const AddFarmForm = ({ onClose }) => {
       growthStage,
       plantingDate,
     };
-
-    // Here, you can integrate the Gemini API to track the crop stage.
-    // Example: await trackCropStageWithGeminiAPI(farmData);
-
-    console.log(farmData);
-    onClose();
+  
+    try {
+      const response = await fetch('/api/v1/post', { // Adjust the URL based on your backend setup
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(farmData),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+  
+      const result = await response.json();
+      console.log(result); // Handle success response if needed
+      onClose(); // Close the form or perform any other action
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -173,8 +193,8 @@ const AddFarmForm = ({ onClose }) => {
           />
         </FormGroup>
         <div>
-        <Button type="submit">Add Farm</Button>
-        <Button type="button" onClick={onClose}>Cancel</Button>
+          <Button type="submit">Add Farm</Button>
+          <Button type="button" onClick={onClose}>Cancel</Button>
         </div>
       </Form>
     </Popup>

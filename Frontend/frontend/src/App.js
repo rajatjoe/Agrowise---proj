@@ -14,8 +14,15 @@ function App() {
     <div className='container-page'>
       <Router>
         <header>
-          <div>
-            <GiHamburgerMenu onClick={() => setShowNav(!showNav)} />
+          
+            <GiHamburgerMenu height={100} width={100} color='white' onClick={() => setShowNav(!showNav)} />
+          
+          <div className='nav2'>
+            <div>HOME</div>
+            <div>FARMS</div>
+            <div>SUGGESTION</div>
+            <div>HABIBI</div>
+
           </div>
         </header>
 

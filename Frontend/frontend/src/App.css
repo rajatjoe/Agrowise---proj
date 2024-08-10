@@ -15,7 +15,19 @@ header{
   background:#001627;
   height:40px;
   display: flex;
-  position: relative;
+  position: fixed;
+  justify-content: space-between;
+  width: 100vw;
+  z-index: 10;
+}
+
+.nav2{
+  display: flex;
+  width: 60vw;
+  right: 0;
+  justify-content: space-evenly;
+  height: 40px;
+  font-size:xx-large;
 }
 
 header h1 {
@@ -31,17 +43,17 @@ header h1 {
   width:240px;
   position: absolute;
   background:#001627;
-  min-height: 100vh;
+  height: 80vh;
+  bottom: 0;
   padding:0 30px;
   transition: all 0.5s;
   left:-100%;
+  padding-top: 150px;
 }
 
 .sidenav.active{
   left:0;
-  min-height: 100%;
-  top:auto;
-  position: absolute;
+  position: fixed;
 }
 
 ul{
@@ -71,6 +83,7 @@ ul li a.active{
 
 header svg{
   font-size: 40px;
+  z-index: 10;
 }
 
 .nav-image{
@@ -120,16 +133,23 @@ header svg{
 .popup form label {
   margin-bottom: 5px;
 }
+
+
+
 /* Home css data */
 
 .mainContainer {
-  background-color: #fff;
+  /* background-color: #fff;
   margin-top: auto;
   margin-bottom: auto;
   color: #000;
   padding: 0px 72px 200px 72px;
   padding-left:72px;
-  padding-right:72px;
+  padding-right:72px; */
+  height: auto;
+  width: 100vw;
+  padding-top: 60px;
+  background-color: #fff;
 
 }
 
@@ -141,14 +161,7 @@ header svg{
   gap: 20px;
 }
 
-@media (max-width: 991px) {
-  .outermain {
-    max-width: 100% ;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-}
+
 
 .container {
   display: flex;
@@ -164,9 +177,10 @@ header svg{
   margin-bottom: 20px;
 }
 
-.description {
+.argoh-desc {
   font-size: 24px;
   font-weight: 400;
+  padding: 0 50px;
 }
 
 .scaled-image-transform {
@@ -181,6 +195,8 @@ header svg{
   height: 60%;
   margin-bottom: 0;
 }
+
+
 .contentWrapper {
   background-color: #E3E3E3;
   align-self: stretch;
@@ -261,6 +277,25 @@ header svg{
   justify-content:row;
   color: #000000;
   margin-bottom: -10%;
+}
+
+.argoh-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+  flex-direction: column;
+
+}
+
+.argoh-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
+  
 }
 
 .split{
