@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/AgroWise.module.css';
+// import '../css/AgroWise.module.css';
 
 const CallToAction = () => {
   return (
