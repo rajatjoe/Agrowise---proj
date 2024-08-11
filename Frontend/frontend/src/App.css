@@ -538,6 +538,11 @@ header svg {
 
 }
 
+.sug-hs{
+  color: black;
+  font-size: large;
+}
+
 .sug-left-heading {
   font-family: 'Times New Roman', Times, serif;
   color: black;
@@ -594,6 +599,53 @@ header svg {
   background-color: #000000;
 }
 
+/* .sug-right {
+  flex: 1;
+  margin-left: 20px;
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sug-right-heading {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+} */
+
+.data-section {
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.data-title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #600cd7;
+}
+
+.data-item {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.data-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+
+}
+
+.data-list-item {
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+
+}
 
 
 
