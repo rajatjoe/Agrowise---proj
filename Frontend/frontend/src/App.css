@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@700&family=Katibeh&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-body{
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,10 +9,10 @@ body{
   color: #eaecef;
 }
 
-header{
-  padding:20px;
-  background:#001627;
-  height:30px;
+header {
+  padding: 20px;
+  background: #001627;
+  height: 30px;
   display: flex;
   position: fixed;
   justify-content: space-between;
@@ -20,24 +20,24 @@ header{
   z-index: 10;
 }
 
-.nav2{
+.nav2 {
   display: flex;
   width: 60vw;
   right: 0;
   justify-content: space-evenly;
   height: 40px;
-  font-size:25px;
+  font-size: 25px;
 }
 
-.navlogo{
+.navlogo {
   height: auto;
-  
+
 }
 
-.navitem{
+.navitem {
   border: 1px solid white;
   border-radius: 30px;
-  padding:0 10px;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,35 +56,35 @@ header h1 {
   color: rgb(43, 237, 21);
 }
 
-.sidenav{
-  width:240px;
+.sidenav {
+  width: 240px;
   position: absolute;
-  background:#001627;
+  background: #001627;
   height: 80vh;
   bottom: 0;
-  padding:0 30px;
+  padding: 0 30px;
   transition: all 0.5s;
-  left:-100%;
+  left: -100%;
   padding-top: 150px;
   z-index: 7;
 }
 
-.sidenav.active{
-  left:0;
+.sidenav.active {
+  left: 0;
   position: fixed;
 }
 
-ul{
+ul {
   padding: 0;
 }
 
 ul li {
   list-style-type: none;
-  margin:10px 0 ;
+  margin: 10px 0;
 
 }
 
-ul li a { 
+ul li a {
   color: #eaecef;
   text-decoration: none;
   font-size: 16px;
@@ -93,25 +93,25 @@ ul li a {
 
 }
 
-ul li a:hover ,
-ul li a.active{
-  background:#172B4D;
+ul li a:hover,
+ul li a.active {
+  background: #172B4D;
   color: #ffffff;
 }
 
-header svg{
+header svg {
   font-size: 40px;
   z-index: 10;
 }
 
-.nav-image{
-  background:#001627;
-  height:40px;
+.nav-image {
+  background: #001627;
+  height: 40px;
   width: 100px;
 }
 
 
-.main{
+.main {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -120,10 +120,10 @@ header svg{
   color: #c9c9c9;
 }
 
-.container-page{
+.container-page {
   /* overflow: hidden; */
   background-color: #4CAF50;
-  
+
 }
 
 /* form css */
@@ -154,14 +154,15 @@ header svg{
 
 /* Home css data */
 .mainContainer {
-  
+
   background-color: #ddffaa;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");margin-top: auto;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
+  margin-top: auto;
   margin-bottom: auto;
   color: #000;
   padding: 0px 72px 200px 72px;
-  padding-left:72px;
-  padding-right:72px;
+  padding-left: 72px;
+  padding-right: 72px;
   height: auto;
   width: 100vw;
   padding-top: 60px;
@@ -188,17 +189,19 @@ header svg{
 }
 
 .title {
-  font-size:1rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
 .scaled-image-transform {
-  transform: scale(0.5); /* Scale down to 50% of the original size */
-  transform-origin: top left; /* Adjust origin if needed */
+  transform: scale(0.5);
+  /* Scale down to 50% of the original size */
+  transform-origin: top left;
+  /* Adjust origin if needed */
 }
-.image
-{
+
+.image {
   padding: 10% 10% 0% 10%;
   position: relative;
   width: 80%;
@@ -213,7 +216,7 @@ header svg{
   align-self: stretch;
 
   color: #000;
-  padding:20px 20px 80px 170px;
+  padding: 20px 20px 80px 170px;
 }
 
 .howItWorks {
@@ -283,29 +286,31 @@ header svg{
   border-radius: 4px;
 }
 
-.argoh{
+.argoh {
   display: flex;
-  justify-content:row;
+  justify-content: row;
   color: #000000;
   margin-bottom: -10%;
 }
 
 
 
-.argoh .argoh-inner h1{
+.argoh .argoh-inner h1 {
   font-size: 60px;
   margin-top: 5rem;
 }
 
-.argoh .argoh-inner{
+.argoh .argoh-inner {
   /* color: red; */
   font-size: 25px;
   /* margin-top: 5rem; */
 }
-.split{
+
+.split {
   height: 100vh;
   /* width: 100vw; */
 }
+
 .popup form input,
 .popup form select {
   padding: 8px;
@@ -329,18 +334,30 @@ header svg{
 .feature-container {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
   margin-top: 10vh;
-  
-  padding-left: 20vw;
+  padding: 0 50px;
   padding-top: 10vh;
+  overflow-x: hidden;
+  background-image: url("./images/sug-bgimage.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.feat-top-sect-heading {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 
+.farmBtn {
 
-.farmBtn{
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -353,12 +370,15 @@ header svg{
   color: white;
   font-size: 16px;
   cursor: pointer;
+  font-weight: 500;
   transition: background-color 0.3s, border-color 0.3s;
+  margin-bottom: 40px;
 
   &:hover {
     background-color: white;
-    color: #4CAF50;
+    color: #000000;
     border-color: #4CAF50;
+    font-weight: 500;
   }
 
   &:focus {
@@ -367,12 +387,43 @@ header svg{
 }
 
 
-.farm-det{
+.farm-det {
   font-size: larger;
   font-weight: bold;
-  color: #001627;
+  color: rgb(10, 188, 81);
+  font-family: 'Times New Roman', Times, serif;
 }
 
+.feature-section-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  flex-direction: column;
+  translate: (-50%, -50%);
+
+}
+
+.feature-section-farms {
+
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.farm-container {
+  height: auto;
+  width: 80vw;
+  padding: 0 30px;
+  border-radius: 50px;
+  border: 5px solid rgb(0, 0, 0);
+
+}
 
 /* ImageUploder */
 
@@ -409,6 +460,8 @@ header svg{
   align-items: center;
   justify-content: center;
   position: relative;
+  height: auto;
+  width: 60vw;
 }
 
 .image-item img {
@@ -433,7 +486,8 @@ header svg{
 .image-item__btn-wrapper:hover {
   background-color: #c82333;
 }
-.btn-submit{
+
+.btn-submit {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -441,15 +495,16 @@ header svg{
   padding: 10px;
   border-radius: 0.5rem;
 }
-.btn-submit button{
+
+.btn-submit button {
   font-size: medium;
   background-color: #2DE7D7;
 }
 
 /* SUGGESTIONS */
-.sug-container{
-  width:100vw;
-  height:100vh;
+.sug-container {
+  width: 100vw;
+  height: 100vh;
   padding-top: 20vh;
   display: flex;
   justify-content: center;
@@ -459,11 +514,11 @@ header svg{
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  
-  
+
+
 }
 
-.sug-left{
+.sug-left {
   height: 70vh;
   width: 40vw;
   /* background-color:#1da2a9; */
@@ -473,7 +528,7 @@ header svg{
   z-index: 2;
 }
 
-.sug-right{
+.sug-right {
   height: 70vh;
   width: 40vw;
   /* background-color:#1da2a9; */
@@ -483,35 +538,36 @@ header svg{
 
 }
 
-.sug-left-heading{
-  font-family:'Times New Roman', Times, serif;
-  color: black;
-  text-align: center;
-  text-decoration: underline;
-}
-.sug-right-heading{
-  font-family:'Times New Roman', Times, serif;
+.sug-left-heading {
+  font-family: 'Times New Roman', Times, serif;
   color: black;
   text-align: center;
   text-decoration: underline;
 }
 
-.sug-desc{
-  color:rgb(255, 255, 255);
-  font-size:large;
+.sug-right-heading {
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.sug-desc {
+  color: rgb(255, 255, 255);
+  font-size: large;
   /* padding-top: 40px; */
   padding: 20px 30px;
   font-weight: bold;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
-.navBtn{
+.navBtn {
   cursor: pointer;
   font-size: 14px;
   line-height: 1;
   border-radius: 500px;
-  transition-property: background-color,border-color,color,box-shadow,filter;
+  transition-property: background-color, border-color, color, box-shadow, filter;
   transition-duration: .3s;
   border: 1px solid transparent;
   letter-spacing: 2px;
@@ -526,15 +582,16 @@ header svg{
   background-color: transparent;
   /* position: fixed; */
   position: absolute;
-  margin-bottom: 20px; /*Button was stuck so fixed it.*/
+  margin-bottom: 20px;
+  /*Button was stuck so fixed it.*/
   bottom: 40px;
   left: 15vw;
 }
 
-.navBtn:hover{
-  
-    color: #fff;
-    background-color: #000000;
+.navBtn:hover {
+
+  color: #fff;
+  background-color: #000000;
 }
 
 
@@ -542,7 +599,7 @@ header svg{
 
 /* SCHEME PAGE */
 
-.scheme-cont{
+.scheme-cont {
   padding-top: 380vh;
   width: 100vw;
   height: auto;
@@ -552,20 +609,20 @@ header svg{
   gap: 30px;
   background-color: #f1f1f1;
   flex-direction: column;
-  background-color:#13391e;
+  background-color: #13391e;
   padding-bottom: 40px;
 }
 
-.scheme-card{
- height: auto;
+.scheme-card {
+  height: auto;
   width: 70vw;
   border: 1px solid black;
   background-color: rgb(215, 210, 174);
   border-radius: 50px;
-  padding:0 30px ;
+  padding: 0 30px;
 }
 
-.scheme-title{
+.scheme-title {
   font-size: small;
   color: black;
 }
@@ -579,7 +636,7 @@ header svg{
   border-radius: 5px;
   object-fit: cover;
   align-items: center;
-  
+
 }
 
 .sch-img {
@@ -608,10 +665,114 @@ header svg{
   -webkit-text-fill-color: transparent;
   border: 3px solid white;
   border-radius: 50px;
-  padding :0 10px;
-  font-family:'Times New Roman', Times, serif;
+  padding: 0 10px;
+  font-family: 'Times New Roman', Times, serif;
 
 }
 
 
-/*  */
+/* FARM CARD */
+
+
+
+.farm-card {
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 16px;
+  position: relative;
+}
+
+.dropdown-content {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Added more horizontal padding */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size for better readability */
+  font-weight: bold; /* Make text bolder */
+  text-transform: uppercase; /* Uppercase text for a stronger effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
+
+button:active {
+  background-color: #004494; /* Darker background when pressed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow when pressed */
+  transform: translateY(0); /* Reset button position when pressed */
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.farm-card h2{
+  color: #000;
+  font-family:Arial, Helvetica, sans-serif;
+  background: white;
+  width: fit-content;
+}
+
+.latlong{
+  background-color: white;
+  color: #000;
+  width: fit-content;
+}
+
+
+/*  DISEASE*/
+
+.diseasse {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-image: url("./images/disease_bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.image-upload {
+  flex: 1;
+  max-width: 50%;
+}
+
+.analysis-data {
+  flex: 1;
+  max-width: 50%;
+}
+
+.data-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+/* IMAGE UPLOADER */

@@ -211,7 +211,7 @@ const AddFarmForm = ({ onClose }) => {
     }
 
     try {
-      await axios.post('http://192.168.113.249:5000/api/addFarm', userData);
+      await axios.post('http://10.200.23.112:5000/api/addFarm', userData);
       const response = await axios.post("http://127.0.0.1:5001/get_recommendations",{userData,farmData})
       const response1 = await axios.post("http://127.0.0.1:5001/get_conditions",{userData,farmData})
       console.log("Recommendations Response:", response.data);
