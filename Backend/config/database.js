@@ -24,3 +24,4 @@ const dbConnect = () => {
 
 // Exporting the dbConnect function for use in other files
 module.exports = dbConnect;
+

@@ -52,9 +52,9 @@ const ImageUploader = () => {
         )}
       </ImageUploading>
     </div>
-    <div className='btn-submit'>
+    {/* <div className='btn-submit'>
         <button className='btn-submit' onClick={handleSubmit}>Submit</button>
-    </div>
+    </div> */}
     </>
   );
 };

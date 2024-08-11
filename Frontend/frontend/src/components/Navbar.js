@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ show }) => {
   return (
-    <div className={show ? 'sidenav active ' : 'sidenav '}>
+    <div className={show ? 'sidenav  ' : 'sidenav active'}>
       <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/feature'>Tracking Farm</Link></li>
