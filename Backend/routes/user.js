@@ -5,8 +5,8 @@ const cors = require('cors');  // Import the cors package
 require("../models/data");
 
 const app = express();
-app.use(bodyParser.json());
 app.use(cors());  // Enable CORS for all origins
+app.use(bodyParser.json());
 
 const mongoUrl = "mongodb+srv://22bcm053:LuGRCsOmyNkxjyEd@cluster0.2kijy.mongodb.net/farmerdata?retryWrites=true&w=majority&appName=Cluster0";
 

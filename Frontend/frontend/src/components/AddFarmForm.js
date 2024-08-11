@@ -211,7 +211,7 @@ const AddFarmForm = ({ onClose }) => {
     }
 
     try {
-      await axios.post('http://192.168.113.249:5000/api/addFarm', userData);
+      await axios.post('http://localhost:5000/api/addFarm', userData).then((res)=>console.log(res));
       const response = await axios.post("http://127.0.0.1:5001/get_recommendations",{userData,farmData})
       const response1 = await axios.post("http://127.0.0.1:5001/get_conditions",{userData,farmData})
       console.log("Recommendations Response:", response.data);
@@ -226,7 +226,7 @@ const AddFarmForm = ({ onClose }) => {
 
   return (
     <Popup>
-      <Form onSubmit={submitHandler}>
+      <form method="post">
         <h2 style={{ textAlign: 'center' }}>Add Farm</h2>
         <FormGroup>
           <Label>Farm Name:</Label>
@@ -272,10 +272,10 @@ const AddFarmForm = ({ onClose }) => {
         {error && <Error>{error}</Error>}
         {(loadingWeather) && <Loader>Loading data...</Loader>}
         <div>
-          <Button type="submit">Add Farm</Button>
+          <Button type="submit" onClick={submitHandler}>Add Farm</Button>
           <Button type="button" onClick={onClose}>Cancel</Button>
         </div>
-      </Form>
+      </form>
     </Popup>
   );
 };

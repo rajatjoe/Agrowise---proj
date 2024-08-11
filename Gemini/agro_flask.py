@@ -17,7 +17,7 @@ genai_api_key = os.getenv('AIzaSyA7X260R0YSK_xoLUC5Q-p4pvbINlD-cEY')
 genai.configure(api_key=genai_api_key)
 
 # Load the CSV file once to avoid reloading in every request
-df = pd.read_csv('Crop_Recommendation.csv')
+df = pd.read_csv('Gemini/Crop_Recommendation.csv')
 
 @app.route('/get_conditions', methods=['POST'])
 def get_conditions():
@@ -32,7 +32,7 @@ def get_conditions():
     stage = user_data.get('growthStage')
 
     conditions_prompt = f"""
-    For the crop '{input_crop}', provide the necessary conditions for optimal growth in the location on {latitude} and {longitude} and is in the {stage} of production.
+    {{For the crop '{input_crop}', provide the necessary conditions for optimal growth in the location on {latitude} and {longitude} and is in the {stage} of production.
     Tell the forward plan. Include:
     - Soil Type
     - Irrigation Needs
@@ -50,7 +50,7 @@ def get_conditions():
     - recommended_fertilizers
     - planting_techniques
 
-    Also, tell if it is practically possible to grow the crop in that region if it is in the initial stages (if seeding is not yet done).
+    Also, tell if it is practically possible to grow the crop in that region if it is in the initial stages (if seeding is not yet done).}}
     """
     response = genai.generate_text(conditions_prompt)
     return jsonify({'generated_text': response['text']})

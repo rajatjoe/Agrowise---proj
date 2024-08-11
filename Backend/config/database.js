@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // Importing the environment variables using the dotenv library
-require("dotenv");
+require(".env");
 
 // Defining a function to connect to the database
 const dbConnect = () => {
