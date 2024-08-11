@@ -2,6 +2,28 @@ import React from 'react';
 import axios from 'axios';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
+const sugData = [
+  {
+    "location": {
+      "latitude": 23.0490112,
+      "longitude": 72.5549056
+    },
+    "soil_type": "Sandy loam",
+    "crops": [
+      "Wheat",
+      "Barley",
+      "Mustard",
+      "Cumin",
+      "Coriander"
+    ],
+    "irrigation_facilities": [
+      "Canal",
+      "Tubewell",
+      "Borewell"
+    ]
+  }
+];
+
 const Suggestion = () => {
 
   const suggBtnHandler = async () => {
@@ -11,8 +33,8 @@ const Suggestion = () => {
 
         try {
           // Initialize Google Generative AI with the API key directly
-          const genAI = new GoogleGenerativeAI('AIzaSyA-ExampleGoogleAPIKey'); // Replace with your actual Google API key
-          const model = await genAI.getGenerativeModel({ model: 'gemini-1.5-bison' });
+          const genAI = new GoogleGenerativeAI('AIzaSyBLL8MMqLP7xH_ub47hFyUExUSc8rOCk80'); // Replace with your actual Google API key
+          const model = await genAI.getGenerativeModel({ model: 'gemini-pro' });
 
           // Generate the prompt
           const prompt = `At latitude ${latitude} and longitude ${longitude}, provide details such as soil type, crops that can be grown, and irrigation facilities, all in JSON format.`;
@@ -27,11 +49,6 @@ const Suggestion = () => {
             lat: latitude,
             lon: longitude,
             prompt: aiText
-          }, {
-            headers: {
-              'Authorization': `Bearer AIzaSyA7X260R0YSK_xoLUC5Q-p4pvbINlD-cEY`, // Replace with your actual Gemini API key
-              'Content-Type': 'application/json'
-            }
           });
 
           const geminiData = geminiResponse.data;
@@ -39,15 +56,12 @@ const Suggestion = () => {
           // Here you can process the data and update your UI accordingly
         } catch (error) {
           if (error.response) {
-            // The request was made and the server responded with a status code that falls out of the range of 2xx
             console.error('Error response data:', error.response.data);
             console.error('Error response status:', error.response.status);
             console.error('Error response headers:', error.response.headers);
           } else if (error.request) {
-            // The request was made but no response was received
             console.error('Error request:', error.request);
           } else {
-            // Something happened in setting up the request that triggered an Error
             console.error('Error message:', error.message);
           }
           console.error('Error config:', error.config);
@@ -81,6 +95,30 @@ const Suggestion = () => {
         <div className='sug-right-heading'>
           FARM ANALYSIS
         </div>
+        {sugData.map((data, index) => (
+          <div key={index} className='data-section sug-hs'>
+            <div className='data-title'>Location:</div>
+            <div className='data-item'>Latitude: {data.location.latitude}</div>
+            <div className='data-item'>Longitude: {data.location.longitude}</div>
+
+            <div className='data-title sug-hs'>Soil Type:</div>
+            <div className='data-item'>{data.soil_type}</div>
+
+            <div className='data-title sug-hs'>Crops That Can Be Grown:</div>
+            <ul className='data-list'>
+              {data.crops.map((crop, cropIndex) => (
+                <li key={cropIndex} className='data-list-item'>{crop}</li>
+              ))}
+            </ul>
+
+            <div className='data-title sug-hs'>Irrigation Facilities:</div>
+            <ul className='data-list'>
+              {data.irrigation_facilities.map((facility, facilityIndex) => (
+                <li key={facilityIndex} className='data-list-item'>{facility}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
