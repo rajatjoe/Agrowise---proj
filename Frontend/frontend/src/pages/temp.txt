@@ -1,20 +1,54 @@
-import React from 'react';
-import styles from './AgroWise.module.css';
+// src/components/Predict.js
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const AgroWiseHeader = () => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.headerContent}>
-        <h1 className={styles.title}>Welcome to AgroWise</h1>
-        <p className={styles.description}>
-          "At AgroWise, we combine the power of technology and agriculture to help farmers make smarter decisions. Our crop recommendation system analyzes your local soil conditions, climate data, and seasonal patterns to provide personalized crop suggestions that optimize for yield, sustainability, and profitability."
-        </p>
-      </div>
-      <div className={styles.imageWrapper}>
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd1d3e63b882d76476e02ce87ddac55950e4d1246476dfbe5294c45115bd5954?placeholderIfAbsent=true&apiKey=1375a8a048d04ebba4c0ffc74eff8181" className={styles.headerImage} alt="AgroWise farming technology illustration" />
-      </div>
-    </header>
-  );
+const Predict = () => {
+    const [image, setImage] = useState(null);
+    const [prediction, setPrediction] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const handleImageChange = (event) => {
+        setImage(event.target.files[0]);
+    };
+
+    const handleSubmit = async () => {
+        if (!image) return;
+
+        setLoading(true);
+
+        // Convert image to base64 or form data
+        const formData = new FormData();
+        formData.append('image', image);
+
+        try {
+            const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            setPrediction(response.data.prediction);
+        } catch (error) {
+            console.error('Error making prediction:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div>
+            <input type="file" onChange={handleImageChange} />
+            <button onClick={handleSubmit} disabled={loading}>
+                {loading ? 'Loading...' : 'Predict'}
+            </button>
+            {prediction && (
+                <div>
+                    <h3>Prediction:</h3>
+                    <pre>{JSON.stringify(prediction, null, 2)}</pre>
+                </div>
+            )}
+        </div>
+    );
 };
 
-export default AgroWiseHeader;
+export default Predict;

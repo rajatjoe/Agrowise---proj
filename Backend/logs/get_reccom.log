@@ -1,0 +1,51 @@
+{
+  generated_text: '```json\n' +
+    '{\n' +
+    '    "recommended_crops": {\n' +
+    '        "short_term": {\n' +
+    '            "crop": "Green gram",\n' +
+    '            "yield": 1200,\n' +
+    '            "price_per_quintal": 5000\n' +
+    '        },\n' +
+    '        "medium_term": {\n' +
+    '            "crop": "Banana",\n' +
+    '            "yield": 200,\n' +
+    '            "price_per_quintal": 2000\n' +
+    '        }\n' +
+    '    },\n' +
+    '    "cultivation_tips": [\n' +
+    '        {\n' +
+    '            "tip": "Sow the seeds at a depth of 2.5-3 cm",\n' +
+    '            "explanation": "This will help the seeds to germinate properly."\n' +
+    '        },\n' +
+    '        {\n' +
+    '            "tip": "Water the crop regularly, especially during the initial stages of growth",\n' +
+    '            "explanation": "This will help the plants to establish themselves and grow strong."\n' +
+    '        },\n' +
+    '        {\n' +
+    '            "tip": "Apply fertilizer and manure regularly",\n' +
+    '            "explanation": "This will help the plants to grow healthy and produce a good yield."\n' +
+    '        },\n' +
+    '        {\n' +
+    '            "tip": "Pests and diseases can be a problem, so it is important to monitor the crop regularly and take action if necessary",\n' +
+    '            "explanation": "This will help to protect the crop and ensure a good yield."\n' +
+    '        }\n' +
+    '    ],\n' +
+    '    "additional_considerations": [\n' +
+    '        {\n' +
+    '            "consideration": "The climate in the area is suitable for growing both green gram and banana",\n' +
+    '            "explanation": "This means that you can grow either crop without having to worry about the weather."\n' +
+    '        },\n' +
+    '        {\n' +
+    '            "consideration": "The soil in the area is suitable for growing both green gram and banana",\n' +
+    '            "explanation": "This means that you can grow either crop without having to worry about the soil conditions."\n' +
+    '        },\n' +
+    '        {\n' +
+    '            "consideration": "The market for both green gram and banana is good in the area",\n' +
+    '            "explanation": "This means that you will be able to sell your produce at a good price."\n' +
+    '        }\n' +
+    '    ],\n' +
+    '    "location": "Adalaj, India"\n' +
+    '}\n' +
+    '```'
+}

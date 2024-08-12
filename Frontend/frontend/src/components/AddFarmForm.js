@@ -160,6 +160,7 @@ const AddFarmForm = ({ onClose }) => {
     if (!location) return;
 
     const { latitude, longitude } = location;
+    console.log(latitude, longitude);
     const url = `https://rest.isric.org/soilgrids/v2.0/properties/query?lon=${longitude}&lat=${latitude}&property=bdod&property=cec&property=cfvo&property=clay&property=nitrogen&property=ocd&property=ocs&property=phh2o&property=sand&property=silt&property=soc&property=wv0010&property=wv0033&property=wv1500&depth=0-5cm&depth=0-30cm&depth=5-15cm&depth=15-30cm&depth=30-60cm&depth=60-100cm&depth=100-200cm&value=Q0.5&value=Q0.05&value=Q0.95&value=mean&value=uncertainty;`
 
     try {
@@ -181,6 +182,7 @@ const AddFarmForm = ({ onClose }) => {
 
     try {
       const response = await axios.get(url);
+      console.log(response.data);
       setWeatherData(response.data);
     } catch (error) {
       setError("Failed to retrieve weather data: " + (error.response ? error.response.status : error.message));
@@ -211,13 +213,12 @@ const AddFarmForm = ({ onClose }) => {
     }
 
     try {
-      await axios.post('http://10.200.23.112:5000/api/addFarm', userData);
-      const response = await axios.post("http://127.0.0.1:5001/get_recommendations",{userData,farmData})
-      const response1 = await axios.post("http://127.0.0.1:5001/get_conditions",{userData,farmData})
+      await axios.post('http://localhost:5000/api/addFarm', userData);
+      const response = await axios.post("http://localhost:5000/get_recommendations",{userData,farmData})
+      const response1 = await axios.post("http://localhost:5000/get_conditions",{userData,farmData})
       console.log("Recommendations Response:", response.data);
       console.log("Conditions Response:", response1.data);
       alert("Farm added successfully!");
-      
       onClose();
     } catch (error) {
       setError("Failed to add farm: " + (error.response ? error.response.status : error.message));

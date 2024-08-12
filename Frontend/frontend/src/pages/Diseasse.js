@@ -1,7 +1,40 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import ImageUploader from '../components/ImageUploader';
 
 const Diseasse = () => {
+  const [image, setImage] = useState(null);
+    const [prediction, setPrediction] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const handleImageChange = (event) => {
+        setImage(event.target.files[0]);
+    };
+
+    const handleSubmit = async () => {
+        if (!image) return;
+
+        setLoading(true);
+
+        // Convert image to base64 or form data
+        const formData = new FormData();
+        formData.append('image', image);
+
+        try {
+            const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            setPrediction(response.data.prediction);
+        } catch (error) {
+            console.error('Error making prediction:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
   const [analysisData, setAnalysisData] = useState(null);
   const [showUploader, setShowUploader] = useState(true);
 
@@ -30,6 +63,18 @@ const Diseasse = () => {
 
   return (
     <div className="diseasse">
+       <div>
+            <input type="file" onChange={handleImageChange} />
+            <button onClick={handleSubmit} disabled={loading}>
+                {loading ? 'Loading...' : 'Predict'}
+            </button>
+            {prediction && (
+                <div>
+                    <h3>Prediction:</h3>
+                    <pre>{JSON.stringify(prediction, null, 2)}</pre>
+                </div>
+            )}
+        </div>
       <div className="container">
         {showUploader ? (
           <div className="image-upload">

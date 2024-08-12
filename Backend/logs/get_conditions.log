@@ -1,0 +1,43 @@
+{
+  generated_text: '```json\n' +
+    '{\n' +
+    '  "soil_type": "loamy sand",\n' +
+    '  "irrigation_needs": "high",\n' +
+    '  "climate_preferences": {\n' +
+    '    "temperature": {\n' +
+    '      "min": 20,\n' +
+    '      "max": 30\n' +
+    '    },\n' +
+    '    "humidity": {\n' +
+    '      "min": 40,\n' +
+    '      "max": 60\n' +
+    '    },\n' +
+    '    "ph_value": {\n' +
+    '      "min": 5.5,\n' +
+    '      "max": 7.0\n' +
+    '    },\n' +
+    '    "rainfall": {\n' +
+    '      "min": 100,\n' +
+    '      "max": 200\n' +
+    '    }\n' +
+    '  },\n' +
+    '  "pests_and_diseases": [\n' +
+    '    "aphids",\n' +
+    '    "corn earworm",\n' +
+    '    "leaf blight",\n' +
+    '    "rust",\n' +
+    '    "smut"\n' +
+    '  ],\n' +
+    '  "recommended_fertilizers": [\n' +
+    '    "nitrogen",\n' +
+    '    "phosphorus",\n' +
+    '    "potassium"\n' +
+    '  ],\n' +
+    '  "planting_techniques": [\n' +
+    '    "direct seeding",\n' +
+    '    "transplanting"\n' +
+    '  ],\n' +
+    '  "is_practically_possible": true\n' +
+    '}\n' +
+    '```'
+}
