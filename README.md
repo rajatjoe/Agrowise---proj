@@ -104,7 +104,7 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`</code></pre>
             </ol>
         </section>
         <footer class="footer">
-            <p>Thank you for checking out the Agrowise Project!</p>
+            <p>Thank you for checking out the Agrowise Project! 🙏🏻</p>
         </footer>
     </div>
 </body>
